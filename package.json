@@ -1,9 +1,9 @@
 {
   "name": "blog-poster",
   "version": "0.0.0",
-  "description": "Small description for blog-poster goes here",
+  "description": "Frontend part of blog-poster",
   "license": "MIT",
-  "author": "",
+  "author": "Abdulla Ouda",
   "directories": {
     "doc": "doc",
     "test": "tests"
