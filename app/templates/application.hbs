@@ -1,5 +1,30 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div class="ui basic segment">
+  <div class="ui tall segment">
+    <img class="ui small centered  image" src="/assets/images/stacked.png">
+  </div>
+  {{#ui-sticky}}
+    <div class="ui attached stackable inverted menu">
+      <a class="item">
+        <i class="home icon"></i>
+        {{#link-to 'home'}}Home{{/link-to}}
+      </a>
+      <a class="item">{{#link-to 'posts'}}Posts{{/link-to}}</a>
+      <a class="item">{{#link-to 'contact'}}Contact{{/link-to}}</a>
+      <a class="right item">{{#link-to 'about'}}About{{/link-to}} </a>
 
-{{outlet}}
+    </div>
+  {{/ui-sticky}}
+
+  {{outlet}}
+
+  <footer>
+    <div class="ui inverted grid segment" style="background-color: #36036d">
+      <div class="thirteen wide column">
+        © Copyright - Abdulla Ouda
+      </div>
+      <div class="three wide column">
+        <img class="ui right aligned container tiny image" src="/assets/images/stackedRev.png">
+      </div>
+    </div>
+  </footer>
+</div>

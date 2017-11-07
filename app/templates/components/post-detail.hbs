@@ -1,0 +1,28 @@
+<h2>{{selectedPost.title}}</h2>
+
+{{#if isEditing}}
+
+  <div class="ui segment">
+    <div class="ui form">
+      <div class="field">
+        <label>Post Title</label>
+        {{input type="text" cols="30" rows="1" value = selectedPost.title}}
+      </div>
+      <div class="field">
+        <label>Post Body</label>
+        {{textarea value=selectedPost.body cols="30" rows="3" }}
+      </div>
+
+      <button class="ui button" {{action 'save' selectedPost.id}}>Save</button>
+    </div>
+  </div>
+{{else}}
+  <div class="ui bulleted list">
+    <div class="item">{{selectedPost.body}} </div>
+
+  </div>
+
+  <button class="ui button" {{action 'edit'}}> Edit </button>
+  <button class="ui button" {{action 'cancel'}}> Cancel </button>
+  {{manage-comments ID = selectedPost.id}}
+{{/if}}

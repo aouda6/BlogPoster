@@ -1,0 +1,22 @@
+
+  <div class="ui bulleted list">
+    <br>
+    {{#each model as |onePost|}}
+      <div class="item" >
+        <div class="ui grid">
+          <div class="ten wide column">
+            <li>{{#link-to 'post' onePost.id}}{{onePost.title}}{{onePost.comments.[0]}}
+            {{/link-to}}</li>
+
+          </div>
+          <div class="six wide column">
+            {{delete-post post=onePost}}
+          </div>
+        </div>
+
+      </div>
+    {{/each}}
+  </div>
+  <br>
+  {{add-new-post}}
+  <br><br><br>
