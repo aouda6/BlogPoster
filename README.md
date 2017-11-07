@@ -13,12 +13,14 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone <https://github.com/aouda6/BlogPoster.git>` this repository
 * `cd blog-poster`
 * `npm install`
+* `bower install`
 
 ## Running / Development
 
+* Make sure the back-end is up and running
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
