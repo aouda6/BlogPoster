@@ -1,0 +1,6 @@
+{
+  "name": "blog-poster",
+  "dependencies": {
+    "semantic-ui": "^2.2.13"
+  }
+}

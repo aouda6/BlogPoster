@@ -7,8 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('home');
-  this.route('post');
+  this.route('home', {path:'/'});
+  this.route('post', {
+    path: 'posts/:post_id'
+  });
   this.route('posts');
   this.route('about');
   this.route('contact', function() {
