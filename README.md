@@ -1,7 +1,6 @@
 # blog-poster
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is the front-end of a simple Ember.js application in which a user is able to create, modify, and remove blog posts.  
 
 ## Prerequisites
 
