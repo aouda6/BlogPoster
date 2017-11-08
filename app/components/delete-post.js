@@ -5,27 +5,21 @@ export default Ember.Component.extend({
   post: null,
 
   modalName: Ember.computed(function () {
-
-      return 'deletePost' + this.get('post').id;
-
-    }),
-
-
+    return 'deletePost' + this.get('post').id;
+  }),
 
   actions: {
     openModal: function (post) {
       var self = this;
       Ember.$('.ui.' + this.get('modalName') + '.modal').modal({
-
         closable: false,
         detachable: false,
         onDeny: function () {
-          Ember.$('.ui.' + self.get('modalName') + '.modal').modal('hide');
+          return true;
         },
         onApprove: function () {
           post.destroyRecord();
-          Ember.$('.ui.' + self.get('modalName') + '.modal').modal('hide');
-
+          return true;
         }
       })
         .modal('show');

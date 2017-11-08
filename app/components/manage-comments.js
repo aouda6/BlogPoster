@@ -26,10 +26,6 @@ export default Ember.Component.extend({
         this.set('statement', null);
       this.set('isEditing', false);
     });
-
-
-
-
     },
 
     addComment() {

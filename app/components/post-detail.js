@@ -22,7 +22,7 @@ export default Ember.Component.extend({
         post.set('body', self.get('selectedPost.body'));
         post.save();
       });
-      this.set('isEditing', false);
+      //this.set('isEditing', false);
       this.get('routing').transitionTo('posts' );
     },
 

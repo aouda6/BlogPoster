@@ -27,7 +27,6 @@ export default Ember.Component.extend({
             body: self.get('body')
           });
           newPost.save().then(function () {
-   //         this.get('routing').transitionTo('posts' );
             return true;
           });
         }
