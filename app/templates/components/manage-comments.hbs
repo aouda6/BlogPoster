@@ -1,27 +1,38 @@
-<div class="ui container">
-  {{#if isEditing}}
-    <br>
-    <h2>Add Comment</h2>
+<br>
+<h2>Readers' Comments </h2>
+{{#each commentsModel as |oneComment|}}
+  <li>  {{oneComment.statement}} </li>
+{{/each}}
+<br>
+<div class="ui button" {{action 'openModal'}}>
+  Add Comment
+</div>
 
-    <form class="ui form">
+{{#ui-modal name="newComment" class="newComment" }}
+  <div class="header">
+    Adding comment
+  </div>
+  <div class="content">
+    <div class="ui form">
       <div class="field">
         <label>Text</label>
-        {{input type="text"  value = statement}}
+        {{input type="text" value = statement}}
       </div>
-      <br>
-      <button class="ui button" {{action 'saveComment'}}> Save</button>
-      <button class="ui button" {{action 'cancel'}}> Cancel</button>
+    </div>
+  </div>
+  <br>
 
+  <div class="actions">
 
-    </form>
-  {{else}}
-    <br>
-    <h2>Readers' Comments </h2>
-    {{#each commentsModel as |oneComment|}}
-      <li>  {{oneComment.statement}} </li>
-    {{/each}}
-    <br>
-    <button class="ui button" {{action 'addComment'}}> Add Comment</button>
-    <br><br><br>
-  {{/if}}
-</div>
+    <div class="ui black deny button">
+      Cancel
+    </div>
+    <div class="ui positive right labeled icon button">
+      Save
+      <i class="checkmark icon"></i>
+    </div>
+
+  </div>
+{{/ui-modal}}
+<br><br><br>
+

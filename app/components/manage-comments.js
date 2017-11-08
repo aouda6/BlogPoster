@@ -1,39 +1,44 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  isEditing: false,
   store: Ember.inject.service(),
+  routing: Ember.inject.service('-routing'),
   ID: null,
+  done: false,
 
-  commentsModel: Ember.computed('isEditing', function(){
-    return this.get('store').query('comment', {'post': this.ID});
-
-  }),
-
-
+  commentsModel: Ember.computed('done', function(){
+     return this.get('store').query('comment', {'post': this.ID});
+    }),
 
   actions: {
-    saveComment () {
-      var myStore = this.get('store');
-      var post = myStore.peekRecord('post', this.ID);
-      var newComment = myStore.createRecord('comment', {
-        statement: this.get('statement'),
-        timeStamp: new Date(),
-        post: post
-      });
+    openModal: function () {
+      var self = this;
+      this.set('statement', null);
+      Ember.$('.ui.newComment.modal').modal({
+        closable: false,
+        detachable: false,
+        onDeny: function () {
+          return true;
+        },
+        onApprove: function () {
+          var myStore = self.get('store');
+          var post = myStore.peekRecord('post', self.ID);
+          var newComment = myStore.createRecord('comment',{
+            statement: self.get('statement'),
+            timeStamp: new Date(),
+            post: post
+          });
+          newComment.save().then(function () {
+            self.set('statement', null);
+            self.set('done', true);
+            return true;
 
-      newComment.save().then(()=> {
-        this.set('statement', null);
-      this.set('isEditing', false);
-    });
+          });
+        }
+      })
+        .modal('show');
     },
 
-    addComment() {
-      this.set('isEditing', true);
-    },
-
-    cancel () {
-      this.set('isEditing', false);
-    }
   }
 });
+
