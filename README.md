@@ -1,6 +1,6 @@
-# blog-poster
+# BlogPoster
 
-This is the front-end of a simple Ember.js application in which a user is able to create, modify, and remove blog posts.  
+This is the front-end of a simple Ember.js application in which a user is able to create, modify, and remove blog posts. This also shows an example of entity table relationship. 
 
 ## Prerequisites
 
@@ -9,43 +9,17 @@ You will need the following things properly installed on your computer.
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with NPM)
 * [Ember CLI](https://ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
 
 ## Installation
 
-* `git clone <https://github.com/aouda6/BlogPoster.git>` this repository
-* `cd blog-poster`
+* `git clone <https://github.com/aouda6/BlogPoster.git>` this repository 
+* `cd BlogPoster`
 * `npm install`
 * `bower install`
 
 ## Running / Development
 
-* Make sure the back-end is up and running
+* Make sure the back-end is up and running, clone and install our repo:
+* https://github.com/aouda6/BlogManager.git
 * `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+* Visit your app at [http://localhost:4200](http://localhost:4200). 
